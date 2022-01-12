@@ -3,26 +3,27 @@ module.exports = app => {
 
     var router = require("express").Router();
 
+    app.get("/", tutorials.findAll);
     // create new tutorial
-    router.post("/", tutorials.create);
+    app.post("/", tutorials.create);
 
-    //
-    router.get("/", tutorials.findAll);
+    // 
+    app.get("/", tutorials.findAll);
 
-    //
-    router.get("/published", tutorials.findAllPublished);
+    // 
+    app.get("/published", tutorials.findAllPublished);
 
-    //
-    router.get("/:id", tutorials.findOne);
+    // 
+    app.get("/:id", tutorials.findOne);
     
-    //
-    router.get("/:id",tutorials.update);
+    // 
+    app.get("/:id",tutorials.update);
 
-    //
-    router.get("/", tutorials.delete);
+    // //
+    app.get("/", tutorials.delete);
 
-    //
-    router.get("/", tutorials.deleteAll);
+    // //
+    app.get("/", tutorials.deleteAll);
 
     app.use("/api/tutorials", router);
 };

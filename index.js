@@ -1,9 +1,9 @@
 const { connect } = require("mongoose");
 
-connect()
-
 const express = require("express");
 const cors = require("cors");
+const db = require("./models");
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -21,11 +21,30 @@ app.use(express.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "application." });
 });
+//call the file
+const dbConfig = require("./config/db.config.js");
+
+//call mongodb
+db.mongoose
+  .connect(db.url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log("connected to db");
+  })
+  .catch(err => {
+    console.log("Cannot connect to db",err);
+    process.exit();
+  });
 
 // set port, listen for requests
-const PORT = process.env.PORT || 4200;
+// require('./app/routes/tutorial.routes')(app);
+require('./routes/tutorial.routes')(app);
+
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
