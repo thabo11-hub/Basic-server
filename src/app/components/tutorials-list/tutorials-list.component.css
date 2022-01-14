@@ -1,0 +1,31 @@
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+  }
+
+  .border{
+    padding: 20px;
+    align-items: center;
+    /* margin-top: 1rem; */
+    padding-bottom: 3.5rem;
+    padding-top: 2rem;
+
+  }
+  
+  .btn{
+    margin-right: 10px;
+    position:relative;
+    float: right;
+  }
+  
+  .fa{
+    margin-right: 10px;
+    float: right;
+  }
+  
+  /* .btnSearch{
+    float: left;
+    position: relative;
+    width: 100px;
+  } */

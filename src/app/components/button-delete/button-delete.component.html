@@ -1,0 +1,59 @@
+<!-- <div *ngIf="viewMode; else editable">
+    <div *ngIf="currentTutorial.id">
+      <h4>Tutorial</h4>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentTutorial.title }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentTutorial.description }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/tutorials/{{ currentTutorial.id }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentTutorial">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentTutorial.id" class="edit-form">
+      <h4>Member</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentTutorial.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Position</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentTutorial.description"
+            name="description"
+          />
+        </div>
+      </form>
+  
+       <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+        Delete
+      </button> 
+    </div> -->
